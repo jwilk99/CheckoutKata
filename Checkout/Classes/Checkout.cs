@@ -12,15 +12,15 @@ namespace CheckoutKata
             items = new List<Item>();
         }
 
-        void ICheckout.Scan(Item item)
+        public void Scan(Item item)
         {
             if (string.IsNullOrEmpty(item.Sku))
                 throw new ArgumentException("SKU is required");
             if (item.UnitPrice == 0)
                 throw new ArgumentException("UnitPrice cannot be 0");
-            items.Add(item);
+            //items.Add(item);
         }
-        int ICheckout.GetTotalPrice()
+        public int GetTotalPrice()
         {
             if (items.Count == 0)
                 throw new ArgumentException("You have not scanned any items");
