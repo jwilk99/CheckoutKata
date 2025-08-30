@@ -8,9 +8,9 @@
         public Item(string sku, int unitPrice)
         {
             if (string.IsNullOrEmpty(sku))
-                throw new ArgumentException("SKU");
-            if (unitPrice == 0)
-                throw new ArgumentException("UnitPrice");
+                throw new ArgumentException("SKU is required");
+            if (unitPrice <= 0)
+                throw new ArgumentException("UnitPrice must be greater than 0");
 
             this.UnitPrice = unitPrice;
             this.Sku = sku;
@@ -20,8 +20,8 @@
         {
             if (string.IsNullOrEmpty(sku))
                 throw new ArgumentException("SKU is required");
-            if (unitPrice == 0)
-                throw new ArgumentException("UnitPrice cannot be 0");
+            if (unitPrice <= 0)
+                throw new ArgumentException("UnitPrice must be greater than 0");
             if (specialPrice.quantity == 0)
                 throw new ArgumentException("Special Price Quantity cannot be 0");
             if (specialPrice.price == 0)
