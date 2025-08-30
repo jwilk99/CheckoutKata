@@ -12,8 +12,8 @@ namespace CheckoutTests.Tests
             var item = new Item("A", 50);
             checkout.Scan(item);
 
-            Assert.NotEmpty(checkout.items);
-            Assert.Single(checkout.items);
+            Assert.NotEmpty(checkout.Items);
+            Assert.Single(checkout.Items);
 
         }
         [Fact]
@@ -25,7 +25,7 @@ namespace CheckoutTests.Tests
             checkout.Scan(item);
             checkout.Scan(itemTwo);
 
-            Assert.Equal(2, checkout.items.Count);
+            Assert.Equal(2, checkout.Items.Count);
 
         }
 
@@ -133,7 +133,6 @@ namespace CheckoutTests.Tests
             checkout.Scan(b);
             checkout.Scan(b);
             checkout.Scan(b);
-
 
             var total = checkout.GetTotalPrice();
 
