@@ -131,6 +131,8 @@ namespace CheckoutTests.Tests
 
             checkout.Scan(b);
             checkout.Scan(b);
+            checkout.Scan(b);
+            checkout.Scan(b);
 
 
             var total = checkout.GetTotalPrice();
