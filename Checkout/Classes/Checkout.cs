@@ -14,10 +14,6 @@ namespace CheckoutKata
 
         public void Scan(Item item)
         {
-            if (string.IsNullOrEmpty(item.Sku))
-                throw new ArgumentException("SKU is required");
-            if (item.UnitPrice == 0)
-                throw new ArgumentException("UnitPrice cannot be 0");
             items.Add(item);
         }
         public int GetTotalPrice()
