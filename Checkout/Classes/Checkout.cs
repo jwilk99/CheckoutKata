@@ -18,7 +18,7 @@ namespace CheckoutKata
                 throw new ArgumentException("SKU is required");
             if (item.UnitPrice == 0)
                 throw new ArgumentException("UnitPrice cannot be 0");
-            //items.Add(item);
+            items.Add(item);
         }
         public int GetTotalPrice()
         {
